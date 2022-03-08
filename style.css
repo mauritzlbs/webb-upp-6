@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+
+#sec1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#sec1 > div {
+    width: fit-content;
+    padding: 50px;
+}
+
