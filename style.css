@@ -1,15 +1,85 @@
-h1 {
+/* JAG MÅSTE KOMMENTERA!!!! */
+
+body {
+    margin: 0;
+    background-image: url("/pictures/background.jpg");
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0 0;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+ul {
+    list-style-type: none;  
+    padding: 0;
+    margin: 0; 
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-left: 40px;
+}
+  
+li a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
 }
 
 #sec1 {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 100px;
 }
 
-#sec1 > div {
-    width: fit-content;
-    padding: 50px;
+#sec1 > img {
+    display: none;
+    width: 70%;
+    height: 400px;
+    object-fit: cover;
 }
 
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
