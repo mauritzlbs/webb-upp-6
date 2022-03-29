@@ -1,9 +1,20 @@
+/*
+Flyttar ner titeln 70 pixlar från toppen
+Sätter färgen på titeln till vit
+Centrerar den också
+*/
 h1 {
-    color: white;
     margin-top: 70px;
+    color: white;
     text-align: center;
 }
 
+/*
+Använder flexbox för att positionera ut bilderna
+flex-wrap: wrap gör att om det tar slut på utrymme fortsätter det på nästa rad
+justify-content: space-evenly gör att bilderna positioneras ut med lika mycket mellanrum runt om sig
+Sätter lite padding på botten så att det finns lite yta under den sista bilden
+*/
 section {
     display: flex;
     flex-wrap: wrap;
@@ -11,16 +22,29 @@ section {
     padding-bottom: 40px;
 }
 
+/*
+Lägger till en tom ruta som fyller ut så att det blir jämnt antal rutor så att positioneringen
+av den sista bilden hamnar under bilden längst till vänster istället för i mitten ifall det finns
+ett ojämt antal bilder
+*/
 section::after {
     content: "";
     flex: 0 1 40%;
 }
 
+/*
+Sätter att varje bild tar 40% av bredden
+Sätter 50 pixlar margin ner från titeln
+*/
 section div {
     width: 40%;
     margin-top: 50px;
 }
 
+/*
+Sätter höjden på varje bild till 330 pixlar
+object-fit: cover gör att bilderna kapas så att de håller rätt upplösning
+*/
 section img {
     height: 330px;
     object-fit: cover;

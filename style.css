@@ -1,11 +1,26 @@
-/* JAG MÅSTE KOMMENTERA!!!! */
-
+/* 
+Tar bort margin så att det inte blir en vit ram runt allt innehåll 
+Sätter backgrundsbilden på sidan
+Sätter fonten till Poppins, och om den inte skulle finnas tillgänlig används sans-serif
+*/
 body {
     margin: 0;
     background-image: url("/pictures/background.jpg");
     font-family: "Poppins", sans-serif;
 }
 
+
+/*
+CSS:en för navbaren
+postion: fixed gör att den alltid håller sig på toppen även om man scrollar ner
+top: 0 gör att den är högst upp
+Den tar hela bredden
+Använder flexbox för att positionera länkarna till de andra sidorna
+align-items: center gör att länkarna positioneras centralt vertikalt
+justify-content: left gör att länkarna läggs till vänster i navbaren
+Sätter bakgrundsfärgen
+box-shadow gör en skugga under navbaren som ser snygg ut
+*/
 nav {
     position: fixed;
     top: 0;
@@ -14,54 +29,87 @@ nav {
     align-items: center;
     justify-content: left;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 0 0;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
 
+/*
+navbaren består av en oordnad lista
+list-style-type: none tar bort punkterna i början av varje länk
+Tar bort all padding och margin från listan
+*/
 ul {
     list-style-type: none;  
     padding: 0;
     margin: 0; 
 }
-  
+
+/*
+Genom att använda float:left sätts alla listobjekt på samma rad
+*/
 li {
     float: left;
 }
   
+/*
+display: block gör i det här fallet att varje länk tar den storlek den behöver
+Sätter länktexten till vit
+Sätter lagom stor padding runtom så att det blir snyggt
+text-decoration: none tar bort linjerna under länkarna
+margin-left gör att länkarna flyttas ut lite från vänster så att de hamnar närmare mitten
+*/
 li a {
     display: block;
     color: white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     margin-left: 40px;
 }
   
+/*
+Gör så att det kommer en linje under länken när man håller på den
+Sätter den linjen till färgen vit
+*/
 li a:hover {
     text-decoration: underline;
     text-decoration-color: white;
 }
 
+/*
+Använder flexbox för att positionera bilden som ska visas
+justify-content: center positionerar den i mitten horisontellt
+margin-top flyttar ner bilden som visas under navbaren
+*/
 #sec1 {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
     margin-top: 100px;
 }
 
+/*
+Sätter bredden på bilderna till 70% av bredden
+Sätter höjden på bilderna till 400px
+object-fit: cover gör att bilderna kapas så att de håller rätt upplösning
+*/
 #sec1 > img {
-    display: none;
     width: 70%;
     height: 400px;
     object-fit: cover;
 }
 
+/*
+Pilarna som gör att man kan gå till nästa och föregående bild
+Ändrar hur musen ser ut när man håller på pilarna så att man förstår att man kan trycka på dem
+Flyttar ner pilarna 270px från toppen av skärmen
+Sätter lite padding så området där man kan trycka på länken blir större
+Sätter pilarnas färg till vit
+Gör dem fetstilta så att de syns bättre
+Sätter font storleken till 20px
+user-selct: none gör så att man inte ska råka kopiera piltecknet om man dubbelklickar
+*/
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 40%;
-    width: auto;
+    top: 270px;
     padding: 16px;
     color: white;
     font-weight: bold;
@@ -69,16 +117,27 @@ li a:hover {
     user-select: none;
 }
 
+/*
+Positionerar den ena pilen längst till vänster
+Gör de yttra hörnen av området rundat
+*/
 .prev {
     left: 0;
     border-radius: 0 3px 3px 0;
 }
 
+/*
+Positionerar den ena pilen längst till höger
+Gör de yttra hörnen av området rundat
+*/
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
+/*
+Gör en mörk bakgrundsfärg när man håller på pilen eller området runt så att man förstår att man kan trycka där för att gå till nästa bild
+*/
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);

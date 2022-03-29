@@ -1,15 +1,28 @@
+/*
+Flyttar ner titeln 70 pixlar från toppen
+Sätter färgen på titeln till vit
+Centrerar den också
+*/
 h1 {
     margin-top: 70px;
     color: white;
     text-align: center;
 }
 
+/*
+Flyttar ner sektionen 50 pixlar från titeln
+Centrerar innehålet i sektionen
+*/
 section {
-    color: white;
-    text-align: center;
     margin-top: 50px;
+    text-align: center;
 }
 
+/*
+Säter font storleken till 20 pixlar
+Sätter färgen på texten till vit
+*/
 p {
     font-size: 20px;
+    color: white;
 }
